@@ -1,0 +1,21 @@
+﻿@page
+
+@model IEnumerable<OdeToFood_Core.Data.Models.Restaurant>
+
+@{
+    ViewBag.Title = "Restaurants";
+}
+
+<h2>Restaurants</h2>
+<p>There are @Model.Count() restaurants on this site.</p>
+
+<p>@Html.ActionLink("Create New", "Create")</p>
+
+<ul>
+    @foreach (var restaurant in Model)
+    {
+        <li>@Html.ActionLink(restaurant.Name, "Details", new { id = restaurant.Id })</li>
+    }
+</ul>
+
+
